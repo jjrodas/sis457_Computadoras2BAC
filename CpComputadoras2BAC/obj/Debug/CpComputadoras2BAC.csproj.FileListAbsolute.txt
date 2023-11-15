@@ -19,3 +19,4 @@ C:\Users\jota\Desktop\Sis457Computadoras2BAC\CpComputadoras2BAC\obj\Debug\CpComp
 C:\Users\jota\Desktop\Sis457Computadoras2BAC\CpComputadoras2BAC\obj\Debug\CpComputadoras2BAC.csproj.CopyComplete
 C:\Users\jota\Desktop\Sis457Computadoras2BAC\CpComputadoras2BAC\obj\Debug\CpComputadoras2BAC.exe
 C:\Users\jota\Desktop\Sis457Computadoras2BAC\CpComputadoras2BAC\obj\Debug\CpComputadoras2BAC.pdb
+C:\Users\jota\Desktop\Sis457Computadoras2BAC\CpComputadoras2BAC\obj\Debug\CpComputadoras2BAC.FrmProducto.resources

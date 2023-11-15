@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
+            this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
+            this.lblPrecioVenta = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.lblMarca = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -46,15 +51,19 @@
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.lblPrincipal = new System.Windows.Forms.Label();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
-            this.lblPrecioVenta = new System.Windows.Forms.Label();
+            this.erpCodigo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpMarca = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpPrecioVenta = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbxDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
             this.pnlAcciones.SuspendLayout();
             this.gbxLista.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCodigo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpMarca)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPrecioVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxDatos
@@ -76,6 +85,39 @@
             this.gbxDatos.TabIndex = 34;
             this.gbxDatos.TabStop = false;
             this.gbxDatos.Text = "Detalles del producto";
+            // 
+            // nudPrecioVenta
+            // 
+            this.nudPrecioVenta.Location = new System.Drawing.Point(596, 25);
+            this.nudPrecioVenta.Name = "nudPrecioVenta";
+            this.nudPrecioVenta.Size = new System.Drawing.Size(166, 26);
+            this.nudPrecioVenta.TabIndex = 29;
+            // 
+            // lblPrecioVenta
+            // 
+            this.lblPrecioVenta.AutoSize = true;
+            this.lblPrecioVenta.Location = new System.Drawing.Point(462, 27);
+            this.lblPrecioVenta.Name = "lblPrecioVenta";
+            this.lblPrecioVenta.Size = new System.Drawing.Size(108, 19);
+            this.lblPrecioVenta.TabIndex = 28;
+            this.lblPrecioVenta.Text = "Precio de Venta:";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(141, 98);
+            this.txtMarca.MaxLength = 250;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(296, 26);
+            this.txtMarca.TabIndex = 27;
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(12, 105);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(52, 19);
+            this.lblMarca.TabIndex = 26;
+            this.lblMarca.Text = "Marca:";
             // 
             // txtDescripcion
             // 
@@ -269,38 +311,21 @@
             this.lblPrincipal.Text = "Productos";
             this.lblPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txtMarca
+            // erpCodigo
             // 
-            this.txtMarca.Location = new System.Drawing.Point(141, 98);
-            this.txtMarca.MaxLength = 250;
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(296, 26);
-            this.txtMarca.TabIndex = 27;
+            this.erpCodigo.ContainerControl = this;
             // 
-            // lblMarca
+            // erpDescripcion
             // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(12, 105);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(52, 19);
-            this.lblMarca.TabIndex = 26;
-            this.lblMarca.Text = "Marca:";
+            this.erpDescripcion.ContainerControl = this;
             // 
-            // nudPrecioVenta
+            // erpMarca
             // 
-            this.nudPrecioVenta.Location = new System.Drawing.Point(596, 25);
-            this.nudPrecioVenta.Name = "nudPrecioVenta";
-            this.nudPrecioVenta.Size = new System.Drawing.Size(166, 26);
-            this.nudPrecioVenta.TabIndex = 29;
+            this.erpMarca.ContainerControl = this;
             // 
-            // lblPrecioVenta
+            // erpPrecioVenta
             // 
-            this.lblPrecioVenta.AutoSize = true;
-            this.lblPrecioVenta.Location = new System.Drawing.Point(462, 27);
-            this.lblPrecioVenta.Name = "lblPrecioVenta";
-            this.lblPrecioVenta.Size = new System.Drawing.Size(108, 19);
-            this.lblPrecioVenta.TabIndex = 28;
-            this.lblPrecioVenta.Text = "Precio de Venta:";
+            this.erpPrecioVenta.ContainerControl = this;
             // 
             // FrmProducto
             // 
@@ -320,10 +345,14 @@
             this.Load += new System.EventHandler(this.FrmProducto_Load);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
             this.pnlAcciones.ResumeLayout(false);
             this.gbxLista.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpCodigo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPrecioVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +382,9 @@
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.NumericUpDown nudPrecioVenta;
         private System.Windows.Forms.Label lblPrecioVenta;
+        private System.Windows.Forms.ErrorProvider erpCodigo;
+        private System.Windows.Forms.ErrorProvider erpDescripcion;
+        private System.Windows.Forms.ErrorProvider erpMarca;
+        private System.Windows.Forms.ErrorProvider erpPrecioVenta;
     }
 }

@@ -113,17 +113,29 @@ namespace CpComputadoras2BAC
         private bool validar()
         {
             bool esValido = true;
-            erpNombre.SetError(txtNombre, "");
+            erpCodigo.SetError(txtCodigo, "");
             erpDescripcion.SetError(txtDescripcion, "");
-            if (string.IsNullOrEmpty(txtNombre.Text))
+            erpMarca.SetError(txtMarca, "");
+            erpPrecioVenta.SetError(nudPrecioVenta, "");
+            if (string.IsNullOrEmpty(txtCodigo.Text))
             {
                 esValido = false;
-                erpNombre.SetError(txtNombre, "El campo nombre es obligatorio.");
+                erpCodigo.SetError(txtCodigo, "El campo código es obligatorio.");
             }
             if (string.IsNullOrEmpty(txtDescripcion.Text))
             {
                 esValido = false;
                 erpDescripcion.SetError(txtDescripcion, "El campo descripción es obligatorio.");
+            }
+            if (string.IsNullOrEmpty(txtMarca.Text))
+            {
+                esValido = false;
+                erpMarca.SetError(txtMarca, "El campo marca es obligatorio.");
+            }
+            if (string.IsNullOrEmpty(nudPrecioVenta.Text))
+            {
+                esValido = false;
+                erpPrecioVenta.SetError(nudPrecioVenta, "El campo precio de venta es obligatorio.");
             }
             return esValido;
         }
@@ -135,6 +147,8 @@ namespace CpComputadoras2BAC
                 var producto = new Producto();
                 producto.codigo = txtCodigo.Text.Trim();
                 producto.descripcion = txtDescripcion.Text.Trim();
+                producto.marca = txtMarca.Text.Trim();
+                producto.precioVenta = (int)nudPrecioVenta.Value;
                 producto.usuarioRegistro = "LabSIS457";
 
                 if (esNuevo)
