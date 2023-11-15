@@ -144,7 +144,7 @@ namespace CpComputadoras2BAC
                 }
                 listar();
                 btnCancelar.PerformClick();
-                MessageBox.Show("Categoría guardada correctamente", "::: Compumundo - Mensaje :::",
+                MessageBox.Show("Categoría guardada correctamente", "::: CompumundoBAC - Mensaje :::",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

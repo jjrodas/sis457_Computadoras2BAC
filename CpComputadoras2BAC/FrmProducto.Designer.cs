@@ -1,16 +1,16 @@
 ﻿namespace CpComputadoras2BAC
 {
-    partial class FrmCategoria
+    partial class FrmProducto
     {
         /// <summary>
-        /// Variable del diseñador necesaria.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Limpiar los recursos que se estén usando.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,18 +20,17 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de Windows Forms
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gbxDatos = new System.Windows.Forms.GroupBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -42,53 +41,57 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.gbxLista = new System.Windows.Forms.GroupBox();
-            this.dgvListaCategorias = new System.Windows.Forms.DataGridView();
+            this.dgvListaProductos = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblBusqueda = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.TextBox();
             this.lblPrincipal = new System.Windows.Forms.Label();
-            this.erpNombre = new System.Windows.Forms.ErrorProvider(this.components);
-            this.erpDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.nudPrecioVenta = new System.Windows.Forms.NumericUpDown();
+            this.lblPrecioVenta = new System.Windows.Forms.Label();
             this.gbxDatos.SuspendLayout();
             this.pnlAcciones.SuspendLayout();
             this.gbxLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpNombre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxDatos
             // 
+            this.gbxDatos.Controls.Add(this.nudPrecioVenta);
+            this.gbxDatos.Controls.Add(this.lblPrecioVenta);
+            this.gbxDatos.Controls.Add(this.txtMarca);
+            this.gbxDatos.Controls.Add(this.lblMarca);
             this.gbxDatos.Controls.Add(this.txtDescripcion);
-            this.gbxDatos.Controls.Add(this.txtNombre);
+            this.gbxDatos.Controls.Add(this.txtCodigo);
             this.gbxDatos.Controls.Add(this.lblDescripcion);
             this.gbxDatos.Controls.Add(this.lblNombre);
             this.gbxDatos.Controls.Add(this.btnCancelar);
             this.gbxDatos.Controls.Add(this.btnGuardar);
             this.gbxDatos.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxDatos.Location = new System.Drawing.Point(70, 392);
+            this.gbxDatos.Location = new System.Drawing.Point(75, 402);
             this.gbxDatos.Name = "gbxDatos";
             this.gbxDatos.Size = new System.Drawing.Size(790, 141);
-            this.gbxDatos.TabIndex = 27;
+            this.gbxDatos.TabIndex = 34;
             this.gbxDatos.TabStop = false;
-            this.gbxDatos.Text = "Detalles de la categoría";
+            this.gbxDatos.Text = "Detalles del producto";
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(141, 63);
             this.txtDescripcion.MaxLength = 250;
-            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(296, 68);
+            this.txtDescripcion.Size = new System.Drawing.Size(296, 26);
             this.txtDescripcion.TabIndex = 25;
             // 
-            // txtNombre
+            // txtCodigo
             // 
-            this.txtNombre.Location = new System.Drawing.Point(141, 25);
-            this.txtNombre.MaxLength = 250;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(296, 26);
-            this.txtNombre.TabIndex = 24;
+            this.txtCodigo.Location = new System.Drawing.Point(141, 25);
+            this.txtCodigo.MaxLength = 250;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(296, 26);
+            this.txtCodigo.TabIndex = 24;
             // 
             // lblDescripcion
             // 
@@ -104,9 +107,9 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(12, 32);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(63, 19);
+            this.lblNombre.Size = new System.Drawing.Size(57, 19);
             this.lblNombre.TabIndex = 8;
-            this.lblNombre.Text = "Nombre:";
+            this.lblNombre.Text = "Código:";
             // 
             // btnCancelar
             // 
@@ -140,10 +143,10 @@
             this.pnlAcciones.Controls.Add(this.btnEliminar);
             this.pnlAcciones.Controls.Add(this.btnEditar);
             this.pnlAcciones.Controls.Add(this.btnNuevo);
-            this.pnlAcciones.Location = new System.Drawing.Point(71, 317);
+            this.pnlAcciones.Location = new System.Drawing.Point(76, 327);
             this.pnlAcciones.Name = "pnlAcciones";
             this.pnlAcciones.Size = new System.Drawing.Size(789, 48);
-            this.pnlAcciones.TabIndex = 26;
+            this.pnlAcciones.TabIndex = 33;
             // 
             // btnCerrar
             // 
@@ -201,38 +204,38 @@
             // 
             // gbxLista
             // 
-            this.gbxLista.Controls.Add(this.dgvListaCategorias);
+            this.gbxLista.Controls.Add(this.dgvListaProductos);
             this.gbxLista.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbxLista.Location = new System.Drawing.Point(72, 82);
+            this.gbxLista.Location = new System.Drawing.Point(77, 92);
             this.gbxLista.Name = "gbxLista";
             this.gbxLista.Size = new System.Drawing.Size(790, 224);
-            this.gbxLista.TabIndex = 25;
+            this.gbxLista.TabIndex = 32;
             this.gbxLista.TabStop = false;
-            this.gbxLista.Text = "Lista de categorías";
+            this.gbxLista.Text = "Lista de productos";
             // 
-            // dgvListaCategorias
+            // dgvListaProductos
             // 
-            this.dgvListaCategorias.AllowUserToAddRows = false;
-            this.dgvListaCategorias.AllowUserToDeleteRows = false;
-            this.dgvListaCategorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvListaCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaCategorias.Location = new System.Drawing.Point(7, 22);
-            this.dgvListaCategorias.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvListaCategorias.MultiSelect = false;
-            this.dgvListaCategorias.Name = "dgvListaCategorias";
-            this.dgvListaCategorias.ReadOnly = true;
-            this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaCategorias.Size = new System.Drawing.Size(776, 195);
-            this.dgvListaCategorias.TabIndex = 0;
+            this.dgvListaProductos.AllowUserToAddRows = false;
+            this.dgvListaProductos.AllowUserToDeleteRows = false;
+            this.dgvListaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaProductos.Location = new System.Drawing.Point(7, 22);
+            this.dgvListaProductos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvListaProductos.MultiSelect = false;
+            this.dgvListaProductos.Name = "dgvListaProductos";
+            this.dgvListaProductos.ReadOnly = true;
+            this.dgvListaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListaProductos.Size = new System.Drawing.Size(776, 195);
+            this.dgvListaProductos.TabIndex = 0;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(771, 42);
+            this.btnBuscar.Location = new System.Drawing.Point(776, 52);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(91, 42);
-            this.btnBuscar.TabIndex = 24;
+            this.btnBuscar.TabIndex = 31;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -242,41 +245,66 @@
             // 
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.Location = new System.Drawing.Point(72, 35);
+            this.lblBusqueda.Location = new System.Drawing.Point(77, 45);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(221, 19);
-            this.lblBusqueda.TabIndex = 23;
-            this.lblBusqueda.Text = "Buscar por nombre de la categoría:";
+            this.lblBusqueda.Size = new System.Drawing.Size(210, 19);
+            this.lblBusqueda.TabIndex = 30;
+            this.lblBusqueda.Text = "Buscar por nombre del producto:";
             // 
             // txtParametro
             // 
-            this.txtParametro.Location = new System.Drawing.Point(72, 54);
+            this.txtParametro.Location = new System.Drawing.Point(77, 64);
             this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(688, 21);
-            this.txtParametro.TabIndex = 22;
+            this.txtParametro.Size = new System.Drawing.Size(688, 20);
+            this.txtParametro.TabIndex = 29;
             this.txtParametro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParametro_KeyPress);
             // 
             // lblPrincipal
             // 
             this.lblPrincipal.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrincipal.Location = new System.Drawing.Point(13, 2);
+            this.lblPrincipal.Location = new System.Drawing.Point(18, 12);
             this.lblPrincipal.Name = "lblPrincipal";
             this.lblPrincipal.Size = new System.Drawing.Size(909, 34);
-            this.lblPrincipal.TabIndex = 21;
-            this.lblPrincipal.Text = "Categorías";
+            this.lblPrincipal.TabIndex = 28;
+            this.lblPrincipal.Text = "Productos";
             this.lblPrincipal.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // erpNombre
+            // txtMarca
             // 
-            this.erpNombre.ContainerControl = this;
+            this.txtMarca.Location = new System.Drawing.Point(141, 98);
+            this.txtMarca.MaxLength = 250;
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(296, 26);
+            this.txtMarca.TabIndex = 27;
             // 
-            // erpDescripcion
+            // lblMarca
             // 
-            this.erpDescripcion.ContainerControl = this;
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(12, 105);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(52, 19);
+            this.lblMarca.TabIndex = 26;
+            this.lblMarca.Text = "Marca:";
             // 
-            // FrmCategoria
+            // nudPrecioVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.nudPrecioVenta.Location = new System.Drawing.Point(596, 25);
+            this.nudPrecioVenta.Name = "nudPrecioVenta";
+            this.nudPrecioVenta.Size = new System.Drawing.Size(166, 26);
+            this.nudPrecioVenta.TabIndex = 29;
+            // 
+            // lblPrecioVenta
+            // 
+            this.lblPrecioVenta.AutoSize = true;
+            this.lblPrecioVenta.Location = new System.Drawing.Point(462, 27);
+            this.lblPrecioVenta.Name = "lblPrecioVenta";
+            this.lblPrecioVenta.Size = new System.Drawing.Size(108, 19);
+            this.lblPrecioVenta.TabIndex = 28;
+            this.lblPrecioVenta.Text = "Precio de Venta:";
+            // 
+            // FrmProducto
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(945, 554);
@@ -287,19 +315,15 @@
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.txtParametro);
             this.Controls.Add(this.lblPrincipal);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FrmCategoria";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "::: Categorías - Compumundo BAC :::";
-            this.Load += new System.EventHandler(this.FrmCategoria_Load);
+            this.Name = "FrmProducto";
+            this.Text = "::: Productos - CompumundoBAC :::";
+            this.Load += new System.EventHandler(this.FrmProducto_Load);
             this.gbxDatos.ResumeLayout(false);
             this.gbxDatos.PerformLayout();
             this.pnlAcciones.ResumeLayout(false);
             this.gbxLista.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpNombre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.erpDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecioVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,7 +333,7 @@
 
         private System.Windows.Forms.GroupBox gbxDatos;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnCancelar;
@@ -320,13 +344,14 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox gbxLista;
-        private System.Windows.Forms.DataGridView dgvListaCategorias;
+        private System.Windows.Forms.DataGridView dgvListaProductos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblBusqueda;
         private System.Windows.Forms.TextBox txtParametro;
         private System.Windows.Forms.Label lblPrincipal;
-        private System.Windows.Forms.ErrorProvider erpNombre;
-        private System.Windows.Forms.ErrorProvider erpDescripcion;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.NumericUpDown nudPrecioVenta;
+        private System.Windows.Forms.Label lblPrecioVenta;
     }
 }
-
