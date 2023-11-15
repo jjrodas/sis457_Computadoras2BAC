@@ -1,5 +1,5 @@
 ﻿-- Creación de la base de datos:
-CREATE DATABASE LabComputadoras2
+CREATE DATABASE LabComputadoras2BAC
 
 -- Cración del Login y contraseña para el usuario de la base de datos:
 CREATE LOGIN usrLabComputadoras2 WITH PASSWORD='C0MPUMUND0',
@@ -8,7 +8,7 @@ CREATE LOGIN usrLabComputadoras2 WITH PASSWORD='C0MPUMUND0',
   CHECK_POLICY = ON
 GO
 
-USE LabComputadoras2
+USE LabComputadoras2BAC
 -- Creación del usuario en base al login y poner la base de datos como propiedad del usuario creado:
 CREATE USER usrLabComputadoras2 FOR LOGIN usrLabComputadoras2
 GO
