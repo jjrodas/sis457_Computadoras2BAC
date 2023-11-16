@@ -11,7 +11,7 @@ namespace ClnComputadoras2BAC
     {
         public static int insertar(Producto producto)
         {
-            using (var context = new LabComputadoras2BACEntities1())
+            using (var context = new LabComputadoras2BACEntities())
             {
                 context.Producto.Add(producto);
                 context.SaveChanges();
@@ -21,7 +21,7 @@ namespace ClnComputadoras2BAC
 
         public static int actualizar(Producto producto)
         {
-            using (var context = new LabComputadoras2BACEntities1())
+            using (var context = new LabComputadoras2BACEntities())
             {
                 var existente = context.Producto.Find(producto.id);
                 existente.idCategoria = producto.idCategoria;
@@ -36,7 +36,7 @@ namespace ClnComputadoras2BAC
 
         public static int eliminar(int id, string usuarioRegistro)
         {
-            using (var context = new LabComputadoras2BACEntities1())
+            using (var context = new LabComputadoras2BACEntities())
             {
                 var existente = context.Producto.Find(id);
                 existente.estado = -1;
@@ -47,7 +47,7 @@ namespace ClnComputadoras2BAC
 
         public static Producto get(int id)
         {
-            using (var context = new LabComputadoras2BACEntities1())
+            using (var context = new LabComputadoras2BACEntities())
             {
                 return context.Producto.Find(id);
             }
@@ -55,7 +55,7 @@ namespace ClnComputadoras2BAC
 
         public static List<Producto> listar()
         {
-            using (var context = new LabComputadoras2BACEntities1())
+            using (var context = new LabComputadoras2BACEntities())
             {
                 return context.Producto.Where(x => x.estado != -1).ToList();
             }
@@ -63,7 +63,7 @@ namespace ClnComputadoras2BAC
 
         public static List<paProductoListar_Result> listarPa(string parametro)
         {
-            using (var context = new LabComputadoras2BACEntities1())
+            using (var context = new LabComputadoras2BACEntities())
             {
                 return context.paProductoListar(parametro).ToList();
             }

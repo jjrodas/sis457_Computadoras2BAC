@@ -7,28 +7,27 @@ using System.Threading.Tasks;
 
 namespace ClnComputadoras2BAC
 {
-    public class ClienteCln
+    public class UsuarioCln
     {
-        public static int insertar(Cliente cliente)
+        public static int insertar(Usuario usuario)
         {
             using (var context = new LabComputadoras2BACEntities())
             {
-                context.Cliente.Add(cliente);
+                context.Usuario.Add(usuario);
                 context.SaveChanges();
-                return cliente.id;
+                return usuario.id;
             }
         }
 
-        public static int actualizar(Cliente cliente)
+        public static int actualizar(Usuario usuario)
         {
             using (var context = new LabComputadoras2BACEntities())
             {
-                var existente = context.Cliente.Find(cliente.id);
-                existente.cedulaIdentidad = cliente.cedulaIdentidad;
-                existente.nombres = cliente.nombres;
-                existente.apellidos = cliente.apellidos;
-                existente.celular = cliente.celular;
-                existente.usuarioRegistro = cliente.usuarioRegistro;
+                var existente = context.Usuario.Find(usuario.id);
+                existente.usuario1 = usuario.usuario1;
+                existente.clave = usuario.clave;
+                existente.rol = usuario.rol;
+                existente.usuarioRegistro = usuario.usuarioRegistro;
                 return context.SaveChanges();
             }
         }
@@ -36,34 +35,34 @@ namespace ClnComputadoras2BAC
         {
             using (var context = new LabComputadoras2BACEntities())
             {
-                var existente = context.Cliente.Find(id);
+                var existente = context.Usuario.Find(id);
                 existente.estado = -1;
                 existente.usuarioRegistro = usuarioRegistro;
                 return context.SaveChanges();
             }
         }
 
-        public static Cliente get(int id)
+        public static Usuario get(int id)
         {
             using (var context = new LabComputadoras2BACEntities())
             {
-                return context.Cliente.Find(id);
+                return context.Usuario.Find(id);
             }
         }
 
-        public static List<Cliente> listar()
+        public static List<Usuario> listar()
         {
             using (var context = new LabComputadoras2BACEntities())
             {
-                return context.Cliente.Where(x => x.estado != -1).ToList();
+                return context.Usuario.Where(x => x.estado != -1).ToList();
             }
         }
 
-        public static List<paClienteListar_Result> listarPa(string parametro)
+        public static List<paUsuarioListar_Result> listarPa(string parametro)
         {
             using (var context = new LabComputadoras2BACEntities())
             {
-                return context.paClienteListar(parametro).ToList();
+                return context.paUsuarioListar(parametro).ToList();
             }
         }
     }

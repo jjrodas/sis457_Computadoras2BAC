@@ -4,17 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="17d3478f4c454a2f888956971bd85427" Name="Diagram1">
-        <EntityTypeShape EntityType="LabComputadoras2BACModel.Categoria" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabComputadoras2BACModel.Cliente" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabComputadoras2BACModel.Empleado" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabComputadoras2BACModel.Producto" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabComputadoras2BACModel.Usuario" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabComputadoras2BACModel.Venta" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabComputadoras2BACModel.VentaDetalle" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="d1f582f6d8df440db148ab9ef4e847b7" Name="Diagram1">
+        <EntityTypeShape EntityType="LabComputadoras2BACModel.Categoria" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabComputadoras2BACModel.Cliente" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabComputadoras2BACModel.Producto" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabComputadoras2BACModel.Usuario" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabComputadoras2BACModel.Venta" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LabComputadoras2BACModel.VentaDetalle" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="LabComputadoras2BACModel.fk_Producto_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="LabComputadoras2BACModel.fk_Venta_CLiente" ManuallyRouted="false" />
-        <AssociationConnector Association="LabComputadoras2BACModel.fk_Usuario_Empleado" ManuallyRouted="false" />
         <AssociationConnector Association="LabComputadoras2BACModel.fk_VentaDetalle_Producto" ManuallyRouted="false" />
         <AssociationConnector Association="LabComputadoras2BACModel.fk_Venta_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="LabComputadoras2BACModel.fk_VentaDetalle_Venta" ManuallyRouted="false" />

@@ -29,21 +29,6 @@
           <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
           <Property Name="estado" Type="smallint" Nullable="false" />
         </EntityType>
-        <EntityType Name="Empleado">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cedulaIdentidad" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="nombres" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="apellidos" Type="varchar" MaxLength="40" Nullable="false" />
-          <Property Name="direccion" Type="varchar" MaxLength="200" Nullable="false" />
-          <Property Name="celular" Type="int" Nullable="false" />
-          <Property Name="cargo" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
-          <Property Name="estado" Type="smallint" Nullable="false" />
-        </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="id" />
@@ -63,9 +48,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idEmpleado" Type="int" Nullable="false" />
           <Property Name="usuario" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="clave" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="rol" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
           <Property Name="estado" Type="smallint" Nullable="false" />
@@ -105,18 +90,6 @@
             </Principal>
             <Dependent Role="Producto">
               <PropertyRef Name="idCategoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_Usuario_Empleado">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleado">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="idEmpleado" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -174,9 +147,6 @@
         <Function Name="paClienteListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parametro" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="paEmpleadoListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="parametro" Type="varchar" Mode="In" />
-        </Function>
         <Function Name="paProductoListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parametro" Type="varchar" Mode="In" />
         </Function>
@@ -186,7 +156,6 @@
         <EntityContainer Name="LabComputadoras2BACModelStoreContainer">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Empleado" EntityType="Self.Empleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
@@ -194,10 +163,6 @@
           <AssociationSet Name="fk_Producto_Categoria" Association="Self.fk_Producto_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Producto" EntitySet="Producto" />
-          </AssociationSet>
-          <AssociationSet Name="fk_Usuario_Empleado" Association="Self.fk_Usuario_Empleado">
-            <End Role="Empleado" EntitySet="Empleado" />
-            <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="fk_Venta_CLiente" Association="Self.fk_Venta_CLiente">
             <End Role="Cliente" EntitySet="Cliente" />
@@ -247,22 +212,6 @@
           <Property Name="estado" Type="Int16" Nullable="false" />
           <NavigationProperty Name="Venta" Relationship="Self.fk_Venta_CLiente" FromRole="Cliente" ToRole="Venta" />
         </EntityType>
-        <EntityType Name="Empleado">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cedulaIdentidad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="apellidos" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="celular" Type="Int32" Nullable="false" />
-          <Property Name="cargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="estado" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="Self.fk_Usuario_Empleado" FromRole="Empleado" ToRole="Usuario" />
-        </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="id" />
@@ -284,13 +233,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idEmpleado" Type="Int32" Nullable="false" />
           <Property Name="usuario1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="clave" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rol" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="estado" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="Empleado" Relationship="Self.fk_Usuario_Empleado" FromRole="Usuario" ToRole="Empleado" />
           <NavigationProperty Name="Venta" Relationship="Self.fk_Venta_Usuario" FromRole="Usuario" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Venta">
@@ -348,18 +296,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_Usuario_Empleado">
-          <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleado">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Usuario">
-              <PropertyRef Name="idEmpleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_VentaDetalle_Producto">
           <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
           <End Role="VentaDetalle" Type="Self.VentaDetalle" Multiplicity="*" />
@@ -396,10 +332,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="LabComputadoras2BACEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LabComputadoras2BACEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categoria" EntityType="Self.Categoria" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
-          <EntitySet Name="Empleado" EntityType="Self.Empleado" />
           <EntitySet Name="Producto" EntityType="Self.Producto" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
           <EntitySet Name="Venta" EntityType="Self.Venta" />
@@ -411,10 +346,6 @@
           <AssociationSet Name="fk_Venta_CLiente" Association="Self.fk_Venta_CLiente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Venta" EntitySet="Venta" />
-          </AssociationSet>
-          <AssociationSet Name="fk_Usuario_Empleado" Association="Self.fk_Usuario_Empleado">
-            <End Role="Empleado" EntitySet="Empleado" />
-            <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
           <AssociationSet Name="fk_VentaDetalle_Producto" Association="Self.fk_VentaDetalle_Producto">
             <End Role="Producto" EntitySet="Producto" />
@@ -432,9 +363,6 @@
             <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paClienteListar" ReturnType="Collection(LabComputadoras2BACModel.paClienteListar_Result)">
-            <Parameter Name="parametro" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="paEmpleadoListar" ReturnType="Collection(LabComputadoras2BACModel.paEmpleadoListar_Result)">
             <Parameter Name="parametro" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="paProductoListar" ReturnType="Collection(LabComputadoras2BACModel.paProductoListar_Result)">
@@ -462,18 +390,6 @@
           <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
           <Property Type="Int16" Name="estado" Nullable="false" />
         </ComplexType>
-        <ComplexType Name="paEmpleadoListar_Result">
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
-          <Property Type="String" Name="nombres" Nullable="false" MaxLength="40" />
-          <Property Type="String" Name="apellidos" Nullable="false" MaxLength="40" />
-          <Property Type="String" Name="direccion" Nullable="false" MaxLength="200" />
-          <Property Type="Int32" Name="celular" Nullable="false" />
-          <Property Type="String" Name="cargo" Nullable="false" MaxLength="30" />
-          <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
-          <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
-          <Property Type="Int16" Name="estado" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="paProductoListar_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="Int32" Name="idCategoria" Nullable="false" />
@@ -487,9 +403,9 @@
         </ComplexType>
         <ComplexType Name="paUsuarioListar_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="Int32" Name="idEmpleado" Nullable="false" />
           <Property Type="String" Name="usuario" Nullable="false" MaxLength="15" />
           <Property Type="String" Name="clave" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="rol" Nullable="false" MaxLength="30" />
           <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
           <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
           <Property Type="Int16" Name="estado" Nullable="false" />
@@ -499,7 +415,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LabComputadoras2BACModelStoreContainer" CdmEntityContainer="LabComputadoras2BACEntities1">
+        <EntityContainerMapping StorageEntityContainer="LabComputadoras2BACModelStoreContainer" CdmEntityContainer="LabComputadoras2BACEntities">
           <EntitySetMapping Name="Categoria">
             <EntityTypeMapping TypeName="LabComputadoras2BACModel.Categoria">
               <MappingFragment StoreEntitySet="Categoria">
@@ -526,22 +442,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Empleado">
-            <EntityTypeMapping TypeName="LabComputadoras2BACModel.Empleado">
-              <MappingFragment StoreEntitySet="Empleado">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
-                <ScalarProperty Name="nombres" ColumnName="nombres" />
-                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="celular" ColumnName="celular" />
-                <ScalarProperty Name="cargo" ColumnName="cargo" />
-                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
-                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Producto">
             <EntityTypeMapping TypeName="LabComputadoras2BACModel.Producto">
               <MappingFragment StoreEntitySet="Producto">
@@ -561,9 +461,9 @@
             <EntityTypeMapping TypeName="LabComputadoras2BACModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
                 <ScalarProperty Name="usuario1" ColumnName="usuario" />
                 <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
                 <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
                 <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
@@ -624,22 +524,6 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="paEmpleadoListar" FunctionName="LabComputadoras2BACModel.Store.paEmpleadoListar">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="LabComputadoras2BACModel.paEmpleadoListar_Result">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="cedulaIdentidad" ColumnName="cedulaIdentidad" />
-                <ScalarProperty Name="nombres" ColumnName="nombres" />
-                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="celular" ColumnName="celular" />
-                <ScalarProperty Name="cargo" ColumnName="cargo" />
-                <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
-                <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
-                <ScalarProperty Name="estado" ColumnName="estado" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="paProductoListar" FunctionName="LabComputadoras2BACModel.Store.paProductoListar">
             <ResultMapping>
               <ComplexTypeMapping TypeName="LabComputadoras2BACModel.paProductoListar_Result">
@@ -659,9 +543,9 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="LabComputadoras2BACModel.paUsuarioListar_Result">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
                 <ScalarProperty Name="usuarioRegistro" ColumnName="usuarioRegistro" />
                 <ScalarProperty Name="fechaRegistro" ColumnName="fechaRegistro" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
