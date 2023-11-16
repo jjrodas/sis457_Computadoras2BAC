@@ -18,9 +18,8 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="cedulaIdentidad" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="nombres" Type="varchar" MaxLength="40" Nullable="false" />
-    <Property Name="primerApellido" Type="varchar" MaxLength="25" Nullable="false" />
-    <Property Name="segundoApellido" Type="varchar" MaxLength="25" Nullable="false" />
-    <Property Name="celular" Type="bigint" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="celular" Type="int" Nullable="false" />
     <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fechaRegistro" Type="datetime" Nullable="false" />
     <Property Name="estado" Type="smallint" Nullable="false" />
@@ -32,10 +31,9 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="cedulaIdentidad" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="nombres" Type="varchar" MaxLength="40" Nullable="false" />
-    <Property Name="primerApellido" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="segundoApellido" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="direccion" Type="varchar" MaxLength="200" Nullable="false" />
-    <Property Name="celular" Type="bigint" Nullable="false" />
+    <Property Name="celular" Type="int" Nullable="false" />
     <Property Name="cargo" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="usuarioRegistro" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="fechaRegistro" Type="datetime" Nullable="false" />

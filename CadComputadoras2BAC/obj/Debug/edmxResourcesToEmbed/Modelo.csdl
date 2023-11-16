@@ -19,9 +19,8 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="cedulaIdentidad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="primerApellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="segundoApellido" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="celular" Type="Int64" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="celular" Type="Int32" Nullable="false" />
     <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="estado" Type="Int16" Nullable="false" />
@@ -34,10 +33,9 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="cedulaIdentidad" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="nombres" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="primerApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="segundoApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="celular" Type="Int64" Nullable="false" />
+    <Property Name="celular" Type="Int32" Nullable="false" />
     <Property Name="cargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="usuarioRegistro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="3" />
@@ -177,7 +175,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="LabComputadoras2BACEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="LabComputadoras2BACEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Categoria" EntityType="Self.Categoria" />
     <EntitySet Name="Cliente" EntityType="Self.Cliente" />
     <EntitySet Name="Empleado" EntityType="Self.Empleado" />
@@ -237,9 +235,8 @@
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
     <Property Type="String" Name="nombres" Nullable="false" MaxLength="40" />
-    <Property Type="String" Name="primerApellido" Nullable="false" MaxLength="25" />
-    <Property Type="String" Name="segundoApellido" Nullable="false" MaxLength="25" />
-    <Property Type="Int64" Name="celular" Nullable="false" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="40" />
+    <Property Type="Int32" Name="celular" Nullable="false" />
     <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
     <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />
     <Property Type="Int16" Name="estado" Nullable="false" />
@@ -248,10 +245,9 @@
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="cedulaIdentidad" Nullable="false" MaxLength="15" />
     <Property Type="String" Name="nombres" Nullable="false" MaxLength="40" />
-    <Property Type="String" Name="primerApellido" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="segundoApellido" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="apellidos" Nullable="false" MaxLength="40" />
     <Property Type="String" Name="direccion" Nullable="false" MaxLength="200" />
-    <Property Type="Int64" Name="celular" Nullable="false" />
+    <Property Type="Int32" Name="celular" Nullable="false" />
     <Property Type="String" Name="cargo" Nullable="false" MaxLength="30" />
     <Property Type="String" Name="usuarioRegistro" Nullable="false" MaxLength="50" />
     <Property Type="DateTime" Name="fechaRegistro" Nullable="false" Precision="23" />

@@ -10,3 +10,15 @@ C:\Users\jota\Desktop\Sis457Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadCo
 C:\Users\jota\Desktop\Sis457Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadComputadoras2BAC.csproj.CopyComplete
 C:\Users\jota\Desktop\Sis457Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadComputadoras2BAC.dll
 C:\Users\jota\Desktop\Sis457Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadComputadoras2BAC.pdb
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\bin\Debug\CadComputadoras2BAC.dll.config
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\bin\Debug\CadComputadoras2BAC.dll
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\bin\Debug\CadComputadoras2BAC.pdb
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\bin\Debug\EntityFramework.dll
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\bin\Debug\EntityFramework.xml
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadComputadoras2BAC.csproj.AssemblyReference.cache
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadComputadoras2BAC.csproj.CoreCompileInputs.cache
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadComputadoras2BAC.csproj.CopyComplete
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadComputadoras2BAC.dll
+C:\Users\jota\Desktop\sis457_Computadoras2BAC\CadComputadoras2BAC\obj\Debug\CadComputadoras2BAC.pdb

@@ -15,10 +15,10 @@ namespace CadComputadoras2BAC
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class LabComputadoras2BACEntities : DbContext
+    public partial class LabComputadoras2BACEntities1 : DbContext
     {
-        public LabComputadoras2BACEntities()
-            : base("name=LabComputadoras2BACEntities")
+        public LabComputadoras2BACEntities1()
+            : base("name=LabComputadoras2BACEntities1")
         {
         }
     

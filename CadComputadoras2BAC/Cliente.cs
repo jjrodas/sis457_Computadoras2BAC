@@ -23,9 +23,8 @@ namespace CadComputadoras2BAC
         public int id { get; set; }
         public string cedulaIdentidad { get; set; }
         public string nombres { get; set; }
-        public string primerApellido { get; set; }
-        public string segundoApellido { get; set; }
-        public long celular { get; set; }
+        public string apellidos { get; set; }
+        public int celular { get; set; }
         public string usuarioRegistro { get; set; }
         public System.DateTime fechaRegistro { get; set; }
         public short estado { get; set; }

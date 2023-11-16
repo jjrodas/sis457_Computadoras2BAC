@@ -27,8 +27,7 @@ namespace CpComputadoras2BAC
             dgvListaClientes.Columns["estado"].Visible = false;
             dgvListaClientes.Columns["ci"].HeaderText = "Cédula de Identidad";
             dgvListaClientes.Columns["nombres"].HeaderText = "Nombres";
-            dgvListaClientes.Columns["primerApellido"].HeaderText = "Primer Apellido";
-            dgvListaClientes.Columns["segundoApellido"].HeaderText = "Segundo Apellido";
+            dgvListaClientes.Columns["nombres"].HeaderText = "Apellidos";
             dgvListaClientes.Columns["celular"].HeaderText = "Celular";
             dgvListaClientes.Columns["usuarioRegistro"].HeaderText = "Usuario";
             dgvListaClientes.Columns["fechaRegistro"].HeaderText = "Fecha de Registro";
@@ -65,9 +64,8 @@ namespace CpComputadoras2BAC
             var cliente = ClienteCln.get(id);
             txtcedulaIdentidad.Text = cliente.cedulaIdentidad;
             txtNombres.Text = cliente.nombres;
-            txtprimerApellido.Text = cliente.primerApellido;
-            txtsegundoApellido.Text = cliente.segundoApellido;
-            txtCelular.Text = cliente.celular;
+            txtApellidos.Text = cliente.apellidos;
+            //txtCelular.Text = ;
         }
     }
 }

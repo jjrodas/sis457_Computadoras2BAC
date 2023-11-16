@@ -2,17 +2,17 @@
 CREATE DATABASE LabComputadoras2BAC
 
 -- Cración del Login y contraseña para el usuario de la base de datos:
-CREATE LOGIN usrLabComputadoras2 WITH PASSWORD='C0MPUMUND0',
-  DEFAULT_DATABASE = LabComputadoras2,
+CREATE LOGIN usrLabComputadoras2BAC WITH PASSWORD='C0MPUMUND0',
+  DEFAULT_DATABASE = LabComputadoras2BAC,
   CHECK_EXPIRATION = OFF,
   CHECK_POLICY = ON
 GO
 
 USE LabComputadoras2BAC
 -- Creación del usuario en base al login y poner la base de datos como propiedad del usuario creado:
-CREATE USER usrLabComputadoras2 FOR LOGIN usrLabComputadoras2
+CREATE USER usrLabComputadoras2BAC FOR LOGIN usrLabComputadoras2BAC
 GO
-ALTER ROLE db_owner ADD MEMBER usrLabComputadoras2
+ALTER ROLE db_owner ADD MEMBER usrLabComputadoras2BAC
 GO
 
 DROP TABLE VentaDetalle;
@@ -47,9 +47,8 @@ CREATE TABLE Cliente (
   id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
   cedulaIdentidad VARCHAR(15) NOT NULL,
   nombres VARCHAR(40) NOT NULL,
-  primerApellido VARCHAR(25) NOT NULL,
-  segundoApellido VARCHAR(25) NOT NULL,
-  celular BIGINT NOT NULL,
+  apellidos VARCHAR(40) NOT NULL,
+  celular INT NOT NULL,
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
   estado SMALLINT NOT NULL DEFAULT 1
@@ -58,10 +57,9 @@ CREATE TABLE Empleado (
   id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
   cedulaIdentidad VARCHAR(15) NOT NULL,
   nombres VARCHAR(40) NOT NULL,
-  primerApellido VARCHAR(20) NOT NULL,
-  segundoApellido VARCHAR(20) NOT NULL,
+  apellidos VARCHAR(40) NOT NULL,
   direccion VARCHAR(200) NOT NULL,
-  celular BIGINT NOT NULL,
+  celular INT NOT NULL,
   cargo VARCHAR(30) NOT NULL,
   usuarioRegistro VARCHAR(50) NOT NULL DEFAULT SUSER_NAME(),
   fechaRegistro DATETIME NOT NULL DEFAULT GETDATE(),
@@ -117,13 +115,13 @@ AS
 
 CREATE PROC paClienteListar @parametro VARCHAR(50)
 AS
-  SELECT id,cedulaIdentidad,nombres,primerApellido,segundoApellido,celular,usuarioRegistro,fechaRegistro,estado
+  SELECT id,cedulaIdentidad,nombres,apellidos,celular,usuarioRegistro,fechaRegistro,estado
   FROM Cliente
   WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 
 CREATE PROC paEmpleadoListar @parametro VARCHAR(50)
 AS
-  SELECT id,cedulaIdentidad,nombres,primerApellido,segundoApellido,direccion,celular,cargo,usuarioRegistro,fechaRegistro,estado
+  SELECT id,cedulaIdentidad,nombres,apellidos,direccion,celular,cargo,usuarioRegistro,fechaRegistro,estado
   FROM Empleado
   WHERE estado<>-1 AND nombres LIKE '%'+REPLACE(@parametro,' ','%')+'%';
 

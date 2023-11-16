@@ -11,7 +11,7 @@ namespace ClnComputadoras2BAC
     {
         public static int insertar(Cliente cliente)
         {
-            using (var context = new LabComputadoras2BACEntities())
+            using (var context = new LabComputadoras2BACEntities1())
             {
                 context.Cliente.Add(cliente);
                 context.SaveChanges();
@@ -21,13 +21,12 @@ namespace ClnComputadoras2BAC
 
         public static int actualizar(Cliente cliente)
         {
-            using (var context = new LabComputadoras2BACEntities())
+            using (var context = new LabComputadoras2BACEntities1())
             {
                 var existente = context.Cliente.Find(cliente.id);
                 existente.cedulaIdentidad = cliente.cedulaIdentidad;
                 existente.nombres = cliente.nombres;
-                existente.primerApellido = cliente.primerApellido;
-                existente.segundoApellido = cliente.segundoApellido;
+                existente.apellidos = cliente.apellidos;
                 existente.celular = cliente.celular;
                 existente.usuarioRegistro = cliente.usuarioRegistro;
                 return context.SaveChanges();
@@ -35,7 +34,7 @@ namespace ClnComputadoras2BAC
         }
         public static int eliminar(int id, string usuarioRegistro)
         {
-            using (var context = new LabComputadoras2BACEntities())
+            using (var context = new LabComputadoras2BACEntities1())
             {
                 var existente = context.Cliente.Find(id);
                 existente.estado = -1;
@@ -46,7 +45,7 @@ namespace ClnComputadoras2BAC
 
         public static Cliente get(int id)
         {
-            using (var context = new LabComputadoras2BACEntities())
+            using (var context = new LabComputadoras2BACEntities1())
             {
                 return context.Cliente.Find(id);
             }
@@ -54,7 +53,7 @@ namespace ClnComputadoras2BAC
 
         public static List<Cliente> listar()
         {
-            using (var context = new LabComputadoras2BACEntities())
+            using (var context = new LabComputadoras2BACEntities1())
             {
                 return context.Cliente.Where(x => x.estado != -1).ToList();
             }
@@ -62,7 +61,7 @@ namespace ClnComputadoras2BAC
 
         public static List<paClienteListar_Result> listarPa(string parametro)
         {
-            using (var context = new LabComputadoras2BACEntities())
+            using (var context = new LabComputadoras2BACEntities1())
             {
                 return context.paClienteListar(parametro).ToList();
             }
